@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Wiki, type: :model do
-  let(:user) { User.create!(email:'test@gmail.com', password: 'password1', confirmed_at: Time.now) }
-  let(:wiki) { Wiki.create!(title: "New Wiki title", body: "New Wiki Body", private: true, user: user) }
+  let(:user) { User.create!(email: "user@bloccit.com", password: "password") }
+  let(:wiki) { Wiki.create!(title: "New Wiki Title", body: "New Wiki Body", private: false, user: user) }
 
-  describe "attributes" do
-     it "has title, body, private, user  attributes" do
-       expect(wiki).to have_attributes(title: "New Wiki title", body: "New Wiki Body", private: true, user: user)
+   it { is_expected.to belong_to(:user) }
+   
+   describe "attributes" do
+     it "has title,body, private and user attributes" do
+       expect(wiki).to have_attributes(title: "New Wiki Title", body: "New Wiki Body", private: false, user: user)
      end
    end
- end
+end
