@@ -6,11 +6,7 @@ class User < ApplicationRecord
   has_many :wikis
 
   before_save { self.role ||= :standard }
-  #after_initialize :standard
 
-
-  #def standard
-  #end
 
   enum role: [:standard, :premium, :admin]
 end

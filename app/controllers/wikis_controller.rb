@@ -66,7 +66,7 @@ class WikisController < ApplicationController
   def authorize_user_or_premium_or_admin
     @wiki = Wiki.find(params[:id])
 
-     unless current_user == @wiki.user || current_user.premium? || current_user.admin?
+     unless current_user.standard? || current_user.premium? || current_user.admin?
        flash[:alert] = "You must be an admin to do that."
        redirect_to wikis_path
      end

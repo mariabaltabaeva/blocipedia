@@ -1,6 +1,8 @@
 class ApplicationPolicy
   attr_reader :user, :wiki
 
+  #after_initialize { self.role ||= :standard }
+
   def initialize(user, wiki)
     @user = user
     @wiki = wiki
@@ -11,7 +13,7 @@ class ApplicationPolicy
   end
 
   def show?
-    scope.where(:id => record.id).exists?
+    scope.where(:id => wiki.id).exists?
   end
 
   def create?
