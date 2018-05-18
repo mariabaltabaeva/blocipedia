@@ -29,7 +29,11 @@ ActiveRecord::Schema.define(version: 20180516003046) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.integer "role"
+=======
+    t.integer "role", default: 0
+>>>>>>> user-story-4-roles
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
