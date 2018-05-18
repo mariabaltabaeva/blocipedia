@@ -47,8 +47,6 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro', '1.0'
-<<<<<<< HEAD
+
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-=======
 gem "pundit"
->>>>>>> user-story-4-roles
