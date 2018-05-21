@@ -4,14 +4,17 @@
     <p><%= @wiki.body %></p>
   </div>
   <div class="col-md-4">
-    <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
-    <% if user_can_delete_wiki?(@wiki) %>
-    <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'} %>
-    <% end %> </div>
 
     <% if current_user %>
-    <div class="col-md-4">
-      <%= link_to "New Wiki", new_wiki_path(@wiki), class: 'btn btn-success' %>
-    </div>
+    <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
     <% end %>
+    <% if user_can_delete_wiki?(@wiki) %>
+    <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'} %>
   </div>
+  <% end %>
+  <% if current_user %>
+  <div class="col-md-4">
+    <%= link_to "New Wiki", new_wiki_path(@wiki), class: 'btn btn-success' %>
+  </div>
+  <% end %>
+</div>

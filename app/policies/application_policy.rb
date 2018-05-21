@@ -7,11 +7,11 @@ class ApplicationPolicy
   end
 
   def index?
-    user.present?
+    false
   end
 
   def show?
-    @wiki.nil?
+    scope.where(:id => wiki.id).exists?
   end
 
   def create?
