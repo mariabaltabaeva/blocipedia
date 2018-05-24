@@ -37,7 +37,11 @@
 <% end %>
 
 <h3>Current Plan:</h3>
-<p><%= current_user.role %><%= button_to "Change my plan" %></p>
+<p><%= current_user.role %>
+  <% if current_user.standard? %><%= button_to "Upgrade", charges_path %>
+<% else %>
+ <%= button_to "Downgrade",class: 'btn btn-danger', data: { confirm: 'Are you sure you want to downgrade your plan?' } %>
+<% end %>
 
 
 <h3>Cancel my account</h3>
