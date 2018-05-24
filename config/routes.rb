@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :downgrades, only: :create
+
   resources :charges, only: [:new, :create]
 
   resources :wikis

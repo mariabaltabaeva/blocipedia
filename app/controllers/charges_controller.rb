@@ -31,8 +31,8 @@ charge = Stripe::Charge.create(
 )
 if charge.paid
       current_user.premium!
-flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
-redirect_to wikis_path
+flash[:notice] = "Thanks for updating your plan, #{current_user.email}!Now you can create private wikis."
+redirect_to edit_user_registration_path
 end
 # Stripe will send back CardErrors, with friendly messages
 # when something goes wrong.
