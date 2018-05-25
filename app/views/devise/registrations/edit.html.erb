@@ -40,7 +40,7 @@
 <p><%= current_user.role %>
   <% if current_user.standard? %><%= button_to "Upgrade", charges_path, class: 'btn btn-success'%>
 <% else %>
- <%= button_to "Downgrade", downgrades_path, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to downgrade your plan?' }%>
+ <%= button_to "Downgrade", downgrades_path, class: 'btn btn-danger', data: { confirm: 'If you will downgrade you plan all your pivate wikis become public, are you sure you want to downgrade?' }%>
 <% end %>
 
 
