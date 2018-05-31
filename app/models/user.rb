@@ -4,6 +4,8 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable
 
   has_many :wikis
+  has_many :collaborators
+  has_many :wiki_collaborations, through: :collaborators
 
 
   enum role: [:standard, :premium, :admin]

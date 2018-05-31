@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :collaborators, only: :create
+
   resources :downgrades, only: :create
 
   resources :charges, only: [:new, :create]
