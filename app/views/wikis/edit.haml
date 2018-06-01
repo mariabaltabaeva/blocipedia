@@ -1,0 +1,11 @@
+%h1 Edit Wikis
+.row
+  .col-md-4
+    %p Guidelines for wikis
+    %ul
+      %li Make sure it interesting.
+      %li Do not infringe copyright.
+      %li Avoid shameless self-promotion.
+      %li information should be based on facts.
+  .col-md-8
+    = render partial: 'form', locals: { wiki: @wiki }
