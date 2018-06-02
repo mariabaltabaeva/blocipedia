@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :collaborators, only: :create
+  resources :collaborators, only: [:create, :destroy]
 
   resources :downgrades, only: :create
 

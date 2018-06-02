@@ -7,10 +7,30 @@
       <li>Make sure it interesting.</li>
       <li>Do not infringe copyright.</li>
       <li>Avoid shameless self-promotion.</li>
-      <li>information should be based on facts.</li>
+      <li>Information should be based on facts.</li>
     </ul>
   </div>
   <div class="col-md-8">
-    <%= render 'form' %>
+    <%= render "form" %>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-8">
+    <h3>Manage collaborators</h3>
+    <%= form_tag :collaborators do %>
+    <%= hidden_field_tag :wiki_id, @wiki.id %>
+    <%= label_tag :email, "Enter user email:" %>
+    <%= text_field_tag :email %>
+    <%= submit_tag %>
+    <% end %>
+
+    <h4> Current collaborators</h4>
+    <% @wiki.collaborators.each do |collaborator| %>
+    <div>
+      <%= collaborator.user.email %>
+    <%= link_to "Remove collaborator", collaborator_path(collaborator, wiki_id: @wiki.id), method: :delete, class: 'btn btn-danger' %>
+  </div>
+    <% end %>
+  </div>
+  </div>

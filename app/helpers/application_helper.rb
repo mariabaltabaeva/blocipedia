@@ -20,7 +20,4 @@ module ApplicationHelper
 
      markdown.render(text).html_safe
    end
-
-   def private_checked
-     if 
 end

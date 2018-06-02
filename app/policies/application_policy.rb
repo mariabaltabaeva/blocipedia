@@ -11,7 +11,7 @@ class ApplicationPolicy
   end
 
   def show?
-    @wiki.user == user || @wiki.private == false
+    @wiki.user == user || @wiki.private == false || @user.collaborators
   end
 
   def create?
