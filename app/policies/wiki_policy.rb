@@ -1,8 +1,8 @@
 class WikiPolicy < ApplicationPolicy
 
-  def owner?
-    record.user == user
-  end
+  #def owner?
+    #record.user == user
+  #end
 
   class Scope
     attr_reader :user, :scope
@@ -23,7 +23,7 @@ class WikiPolicy < ApplicationPolicy
             wikis << wiki # if the user is premium, only show them public wikis, or that private wikis they created, or private wikis they are a collaborator on
           end
         end
-      else # this is the lowly standard user
+      else
         all_wikis = scope.all
         wikis = []
         all_wikis.each do |wiki|

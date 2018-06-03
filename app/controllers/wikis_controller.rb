@@ -1,12 +1,11 @@
 class WikisController < ApplicationController
 
   def index
-    @wikis = policy_scope(Wiki)
-    #if current_user
-      #@wikis = Wiki.where('private = ? OR user_id = ?', false, current_user.id)
-    #else
-      #@wikis = Wiki.where(private: false)
-    #end
+    if current_user
+      @wikis = policy_scope(Wiki)
+    else
+      @wikis = Wiki.where(private: false)
+    end
   end
 
     def show
