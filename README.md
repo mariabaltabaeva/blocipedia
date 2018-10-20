@@ -1,24 +1,3 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Blocipedia](https://infinite-sands-18153.herokuapp.com/) is a free  online encyclopedia, which allows users to create public and private Markdown-based wikis.
+![](images/IMG_20181020_160818.png)
